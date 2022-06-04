@@ -117,12 +117,17 @@ function playRound(ply ,computerSelection ){
 function game(){
      
      for(let j = 0 ; j < 5 ; j++){  
-          const playerSelection = prompt("enter your choice :");
+          const playerSelection = prompt("enter your choice rock , paper or scissores:");
           const computerSelection = computerPlay();            
-          playRound(playerSelection,computerSelection);
+          console.log(playRound(playerSelection,computerSelection)) ;
+          // const resul = playRound(playerSelection,computerSelection);
      }
-     console.log("THE END And your Results are : "  , "  you win :"  , win , "and you lost :" , los , "and you get the same thing: " , same , "    THNKS");
+     // console.log(resul);
+     console.log("THE END And your Results are : " , " you win : "  , win , " and you lost : " , los , " and you get the same thing: " , same , "    THNKS");
 }
 game();
+
+// let apperr = document.querySelector("section h2");
+// apperr.innerHTML = ` ${ game() } `;
  
  
