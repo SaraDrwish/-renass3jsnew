@@ -10,6 +10,8 @@ return compran;
 let win = 0 ;
 let los = 0;
 let same = 0;
+let res = " ";
+
 
 function playRound(ply ,computerSelection ){  
     
@@ -23,6 +25,7 @@ function playRound(ply ,computerSelection ){
                     console.log("this is the same choice LETs do other try" );
                     same++;
                     console.log("==================================");
+                    res = "this is the same choice LETs do other try" ;
                     }
 
                else if(playerSelection === "rock" && computerSelection==="scissores"){
@@ -31,7 +34,7 @@ function playRound(ply ,computerSelection ){
                     console.log("u win" );
                     win++;
                     console.log("==================================");
-
+                    res = "u win" ;
                }
                else if(playerSelection === "scissores" && computerSelection===" rock"){
                     console.log("computerSelection:" ,computerSelection);   
@@ -39,11 +42,14 @@ function playRound(ply ,computerSelection ){
                     console.log("u lost" );
                     los++;
                     console.log("==================================");
+                    res = "u lost" ;
                }
 
                else if(playerSelection === "rock" && computerSelection === " paper "){
                     res= console.log("u lost"  );
                     los++;
+                    res = "u lost" ;
+
                }
                else if(playerSelection === "paper" && computerSelection === " rock "){
                     console.log("computerSelection:" ,computerSelection);   
@@ -51,6 +57,7 @@ function playRound(ply ,computerSelection ){
                     console.log("u win" );
                     win++;
                     console.log("==================================");
+                    res = "u win" ;
                }
 
                else if(playerSelection ==="scissores" && computerSelection==="paper"){
@@ -59,6 +66,7 @@ function playRound(ply ,computerSelection ){
                     console.log("u win" );
                     win++;
                     console.log("==================================");
+                    res = "u win" ;
                }
                else if(playerSelection ==="paper" && computerSelection==="scissores"){
                     console.log("computerSelection:" ,computerSelection);   
@@ -66,6 +74,7 @@ function playRound(ply ,computerSelection ){
                     console.log("u lost" );
                     los++;
                     console.log("==================================");
+                    res = "u lost" ;
                }
 
                else if(playerSelection ==="scissores" && computerSelection==="rock"){
@@ -74,6 +83,7 @@ function playRound(ply ,computerSelection ){
                     console.log("u lost" );
                     los++;
                     console.log("==================================");  
+                    res = "u lost" ;
                }
                else if(playerSelection ==="rock" && computerSelection==="scissores"){
                     console.log("computerSelection:" ,computerSelection);   
@@ -81,6 +91,7 @@ function playRound(ply ,computerSelection ){
                     console.log("u win" );
                     win++;
                     console.log("==================================");   
+                    res = "u win" ;
                }
 
                else if(playerSelection ==="paper" && computerSelection==="scissores"){
@@ -89,6 +100,7 @@ function playRound(ply ,computerSelection ){
                     console.log("u lost" );
                     los++;
                     console.log("==================================");
+                    res = "u lost" ;
                }
                else if(playerSelection ==="scissores" && computerSelection==="paper"){
                     console.log("computerSelection:" ,computerSelection);   
@@ -96,6 +108,7 @@ function playRound(ply ,computerSelection ){
                     console.log("u win" );
                     win++;
                     console.log("==================================");
+                    res = "u win" ;
                }
                else if(playerSelection ==="paper" && computerSelection==="rock"){
                     console.log("computerSelection:" ,computerSelection);   
@@ -103,6 +116,7 @@ function playRound(ply ,computerSelection ){
                     console.log("u win" );
                     win++;
                     console.log("==================================");
+                    res = "u win" ;
                }
                else if(playerSelection ==="rock" && computerSelection==="paper"){
                     console.log("computerSelection:" ,computerSelection);   
@@ -110,8 +124,10 @@ function playRound(ply ,computerSelection ){
                     console.log("u lost" );
                     los++;
                     console.log("==================================");
+                    res = "u lost" ;
                }
-
+               // windh3.innerHTML =  playRound(playerSelection,computerSelection) ;
+               windh3.innerHTML = res ;
 }
 
 function game(){
@@ -123,11 +139,58 @@ function game(){
           // const resul = playRound(playerSelection,computerSelection);
      }
      // console.log(resul);
-     console.log("THE END And your Results are : " , " you win : "  , win , " and you lost : " , los , " and you get the same thing: " , same , "    THNKS");
+     let mess = console.log("THE END And your Results are : " , " you win : "  , win , " and you lost : " , los , " and you get the same thing: " , same , "    THNKS");
 }
-game();
+// game();
 
-// let apperr = document.querySelector("section h2");
-// apperr.innerHTML = ` ${ game() } `;
+const playerSelection = prompt("enter your choice rock , paper or scissores:");
+const computerSelection = computerPlay(); 
+
+let appertitl = document.querySelector("section h2");
+let windh3 = document.querySelector("section h3");
+let windh4 = document.querySelector("section h4");
+let windh5 = document.querySelector("section h5");
+
+let rc = document.getElementById("rc"); 
+let sc = document.getElementById("sc"); 
+let pa = document.getElementById("pa"); 
+
+let usercho =document.getElementById("usercho");
+let btn = document.querySelectorAll("section h5 button");
+let userchois ;
+
+btn.forEach((btn)=>{
+
+     btn.addEventListener("click" , (e)=>{
+          userchois = e.target.dataset.att;
+          usercho.innerHTML = userchois ;
+          // btn.classList.add("activ");
+
+          //  e.target.querySelectorAll("section h5 button").forEach( (btn)=>{
+          //      e.target.classList.remove(".activ");
+          // }); 
+          // e.classList.add(".activ");
+          // windh4.innerHTML = computerPlay() ;
+          // windh3.innerHTML =  playRound(playerSelection,computerSelection) ;
+          computerPlay( )  ;
+          playRound(  );
+     
+     });
+          // btn.classList.remove("activ");
  
+ });
+
+
+// apperr.innerHTML = ` ${ game() } `;
+// windh3.innerHTML ="THE END And your Results are : " , " you win : "  , win , " and you lost : " , los , " and you get the same thing: " , same , " THNKS" ;
+// windh4.innerHTML = "ply:" , ply ;
+// windh5.innerHTML ="computerSelection:" ,computerSelection; 
+
+
+// console.log(pa ,sc ,rc );
+
+
+
+
+
  
